@@ -64,7 +64,7 @@ main()
 // krawêdzi grafu sieci przep³ywowej
 
   
-  while (1){
+  do{
 
 // Na pocz¹tku pêtli zerujemy tablicê poprzedników p[]
 
@@ -82,7 +82,7 @@ main()
 // Zerujemy kolejkê i umieszczamy w niej Ÿród³o s
 
     //q.clear(); 
-	dodaj(s);
+	rozmiar+=dodaj(s);
 
 // Zmienna esc umo¿liwia odpowiednie wychodzenie z
 // dwóch zagnie¿d¿onych pêtli - zamiast polecenie goto,
@@ -93,12 +93,14 @@ main()
 // Rozpoczynamy pêtlê wyszukuj¹c¹ œcie¿ki BFS. Pêtla koñczy
 // siê w przypadku braku dalszych wierzcho³ków w kolejce
 
+   
+
     while(rozmiar)
     {
 
 // Z pocz¹tku kolejki pobieramy element i usuwamy go z kolejki
 
-      x = pierwszy; usun(pierwszy);
+      x = pierwszy->liczba; usun(pierwszy);
 
 // Sprawdzamy wszystkich s¹siadów wierzcho³ka x przegl¹daj¹c
 // wiersz macierzy C[x][]
@@ -161,7 +163,7 @@ main()
 // Jeœli wierzcho³ek y nie jest ujœciem t, to dopisujemy
 // go na koñcu kolejki i kontynuujemy pêtlê BFS
 
-          dodaj(y); 
+          rozmiar+=dodaj(y); 
      
         } //koniec if(cp && !p[y])     
 
@@ -179,7 +181,7 @@ main()
 
     if(!esc) break;
 
-  } 
+  } while(1);
   
 // Prezentujemy wyniki obliczeñ. Najpierw wypisujemy
 // wartoœæ maksymalnego przep³ywu
