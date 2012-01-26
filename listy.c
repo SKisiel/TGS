@@ -76,6 +76,8 @@ return 1;
 void usun(struct element *pozycja){
 if(pozycja==NULL) // Zabezpieczenie przed otrzymaniem wskaŸnika NULL
 return;
+if (rozmiar==1) pierwszy=NULL;
+else {
 if(pozycja==pierwszy){
 pierwszy=pozycja->nast;
 pierwszy->poprz=NULL;
@@ -85,6 +87,7 @@ ostatni->nast=NULL;
 } else {
 pozycja->poprz->nast=pozycja->nast;
 pozycja->nast->poprz=pozycja->poprz;
+}
 }
 free(pozycja);
 rozmiar--;
