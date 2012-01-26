@@ -11,7 +11,7 @@ main()
 // Ze standardowego wejœcia odczytujemy
 // n - liczbê wierzcho³ków w grafie sieci
 // m - liczbê krawêdzi
-  printf("\nPodaj liczbe wierzcholkow i krawedzi grafow w sieci:");
+  printf("\nPodaj liczbe wierzcholkow i krawedzi grafow w sieci: ");
   scanf("%d %d",&n,&m);
   
 // Tworzymy macierze:
@@ -39,7 +39,7 @@ main()
 
   for(i = 1; i <= m; i++)
   {
-    printf("\nPodaj liczbe wierzcholkow i krawedzi grafow oraz przpustowosc tych krawedzi:");
+    printf("\nPodaj numery wierzcholkow polaczonych krawedzia oraz przepustowosc tych krawedzi: ");
 	scanf("%d %d %d", &x, &y, &cp);
     C[x][y] = cp;        
   }
@@ -47,7 +47,7 @@ main()
 // Na koniec odczytujemy numer wierzcho³ka Ÿród³a s
 // oraz numer wierzcho³ka ujœcia t
 
-  printf("\nPodaj numer wierzcholka zrodla i wierzcholka ujscia:");
+  printf("\nPodaj numer wierzcholka zrodla i wierzcholka ujscia: ");
   scanf("%d %d",&s,&t);
   
 //**************************************************
