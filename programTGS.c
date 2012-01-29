@@ -79,9 +79,8 @@ main()
 
     cfp[s] = MAXINT;
 
-// Zerujemy kolejkê i umieszczamy w niej Ÿród³o s
+//  Umieszczamy w kolejce Ÿród³o s
 
-    //q.clear(); 
 	rozmiar+=dodaj(s);
 
 // Zmienna esc umo¿liwia odpowiednie wychodzenie z
