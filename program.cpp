@@ -38,6 +38,8 @@ main()
 // cp  - przepustowoœæ krawêdzi
 // Odczytane dane zapamiêtujemy: C[x][y] = cp
 
+	cout << "Podaj kolejno numery wierzcholkow polaczonych krawedzia oraz przepustowosci tych krawedzi: ";
+
   for(i = 1; i <= m; i++)
   {
     cin >> x >> y >> cp;
@@ -47,6 +49,7 @@ main()
 // Na koniec odczytujemy numer wierzcho³ka Ÿród³a s
 // oraz numer wierzcho³ka ujœcia t
 
+  cout << "Podaj numer wierzcholka zrodla s i ujscia t: ";
   cin >> s >> t;
 
 //**************************************************
@@ -84,8 +87,7 @@ main()
     q.push_back(s);
 
 // Zmienna esc umo¿liwia odpowiednie wychodzenie z
-// dwóch zagnie¿d¿onych pêtli - zamiast polecenie goto,
-// którego nie lubiê stosowaæ.
+// dwóch zagnie¿d¿onych pêtli
 
     esc = 0;
 

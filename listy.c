@@ -16,8 +16,8 @@ int dodaj(int liczba){
 struct element *nowy;
 if((nowy=(struct element *)malloc(sizeof(struct element)))==NULL)
 return 0;
-if((nowy->liczba=(int *)malloc(sizeof(liczba)))==NULL)
-return 0;
+/*if((nowy->liczba=(int *)malloc(sizeof(liczba)))==NULL)
+return 0;*/
 nowy->liczba=liczba;
 if(pierwszy==NULL){ 
 nowy->nast=NULL; 
@@ -30,15 +30,16 @@ nowy->poprz=ostatni;
 ostatni->nast=nowy; 
 ostatni=nowy; 
 }
-return 1;
+//return 1;
+rozmiar++;
 }
 
 int dodajZa(struct element *za, int liczba){
 struct element *nowy; 
 if((nowy=(struct element *)malloc(sizeof(struct element)))==NULL)
 return 0;
-if((nowy->liczba=(int *)malloc(sizeof(liczba)))==NULL)
-return 0;
+/*if((nowy->liczba=(int *)malloc(sizeof(liczba)))==NULL)
+return 0;*/
 nowy->liczba=liczba;
 if(za==ostatni){
 nowy->nast=NULL;
@@ -50,15 +51,16 @@ nowy->poprz=za;
 nowy->nast=za->nast;
 za->nast=nowy;
 }
-return 1;
+//return 1;
+rozmiar++;
 }
 
 int dodajPrzed(struct element *przed, int liczba){
 struct element *nowy;
 if((nowy=(struct element *)malloc(sizeof(struct element)))==NULL)
 return 0;
-if((nowy->liczba=(int *)malloc(sizeof(liczba)))==NULL)
-return 0;
+/*if((nowy->liczba=(int *)malloc(sizeof(liczba)))==NULL)
+return 0;*/
 nowy->liczba=liczba;
 if(przed==pierwszy){
 nowy->poprz=NULL;
@@ -70,7 +72,8 @@ nowy->nast=przed;
 nowy->poprz=przed->poprz;
 przed->poprz=nowy;
 }
-return 1;
+//return 1;
+rozmiar++;
 }
 
 void usun(struct element *pozycja){

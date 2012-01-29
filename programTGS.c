@@ -29,8 +29,10 @@ main()
 // Zerujemy macierze przepustowoœci i przep³ywów
 
   for(i = 1; i <= n; i++)
-    for(j = 1; j <= n; j++) F[i][j] = C[i][j] = 0;
-      
+    for(j = 1; j <= n; j++){ 
+	F[i][j] = 0;
+	C[i][j] = 0;
+    }  
 // Ze standardowego wejœcia odczytujemy definicje krawêdzi.
 // Ka¿da definicja sk³ada siê z trzech liczb
 // x,y - wierzcho³ki grafu po³¹czone krawêdzi¹
@@ -39,7 +41,7 @@ main()
 
   for(i = 1; i <= m; i++)
   {
-    printf("\nPodaj numery wierzcholkow polaczonych krawedzia oraz przepustowosc tych krawedzi: ");
+    printf("\nPodaj numery wierzcholkow polaczonych krawedzia oraz przepustowosc tej krawedzi: ");
 	scanf("%d %d %d", &x, &y, &cp);
     C[x][y] = cp;        
   }
@@ -81,11 +83,10 @@ main()
 
 //  Umieszczamy w kolejce Ÿród³o s
 
-	rozmiar+=dodaj(s);
+	dodaj(s);
 
 // Zmienna esc umo¿liwia odpowiednie wychodzenie z
-// dwóch zagnie¿d¿onych pêtli - zamiast polecenie goto,
-// którego nie lubiê stosowaæ.
+// dwóch zagnie¿d¿onych pêtli
 
     esc = 0;
 
@@ -99,7 +100,8 @@ main()
 
 // Z pocz¹tku kolejki pobieramy element i usuwamy go z kolejki
 
-      x = pierwszy->liczba; usun(pierwszy);
+      x = pierwszy->liczba; 
+	  usun(pierwszy);
 
 // Sprawdzamy wszystkich s¹siadów wierzcho³ka x przegl¹daj¹c
 // wiersz macierzy C[x][]
@@ -129,7 +131,7 @@ main()
 // œcie¿ki dla poprzednika x i bie¿¹cej przepustowoœci
 // residualnej krawêdzi x->y.
 
-          cfp[y] = cfp[x] > cp ? cp : cfp[x];
+          cfp[y] = (cfp[x] > cp) ? cp : cfp[x];
 
 // Jeœli osi¹gnêliœmy ujœcie, to œcie¿ka jest kompletna
 
@@ -147,7 +149,9 @@ main()
 
              while(y != s)
              {
-               x = p[y];
+               //printf("x=%d y=%d p[y]=%d F[x][y]=%d F[y][x]=%d t=%d cfp[t]=%d\n\n",x,y,p[y],F[x][y],F[y][x],t,cfp[t]);
+			   x = p[y];
+			   //if(F[x][y]<0) break;
                F[x][y] += cfp[t];
                F[y][x] -= cfp[t];
                y = x;        
@@ -162,7 +166,7 @@ main()
 // Jeœli wierzcho³ek y nie jest ujœciem t, to dopisujemy
 // go na koñcu kolejki i kontynuujemy pêtlê BFS
 
-          rozmiar+=dodaj(y); 
+          dodaj(y); 
      
         } //koniec if(cp && !p[y])     
 
@@ -193,5 +197,4 @@ main()
         printf("%d -> %d %d/%d\n", x, y, F[x][y], C[x][y]);
                    
   printf("\n");
-  //system("PAUSE");
 }
