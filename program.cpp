@@ -13,6 +13,7 @@ main()
 // n - liczbê wierzcho³ków w grafie sieci
 // m - liczbê krawêdzi
 
+  cout << "Podaj liczbe wierzcholkow i krawedzi grafu: ";
   cin >> n >> m;
 
 // Tworzymy macierze:
@@ -38,7 +39,7 @@ main()
 // cp  - przepustowoœæ krawêdzi
 // Odczytane dane zapamiêtujemy: C[x][y] = cp
 
-	cout << "Podaj kolejno numery wierzcholkow polaczonych krawedzia oraz przepustowosci tych krawedzi: ";
+	cout << "Podaj kolejno numery wierzcholkow polaczonych krawedzia oraz przepustowosci tych krawedzi: \n";
 
   for(i = 1; i <= m; i++)
   {
@@ -194,5 +195,4 @@ main()
              << F[x][y] << "/" << C[x][y] << endl;
 
   cout << endl;
-  system("PAUSE");
 }
